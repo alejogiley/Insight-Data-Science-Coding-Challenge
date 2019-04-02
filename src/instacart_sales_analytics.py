@@ -104,7 +104,7 @@ def read_csv(fileopen):
 	reading_departments = False
 	
 	# read first line
-	# !!!File should contains header
+	# !!! file should contains header
 	head = fileopen.readline()
 	# set keys for dicc
 	keys = head.replace("\n","").split(",")
@@ -122,6 +122,8 @@ def read_csv(fileopen):
 		phrase = ",".join(string)
 		
 		# check whether keys belong to order_products.csv file
+		# !! one could ignore the header info
+		# !! use 'if phrase:' instead 
 		if keys[0] == "order_id" and keys[1] == "product_id":
 			reading_orders = True
 			# add the product_id record to prod_dict, create a new 
